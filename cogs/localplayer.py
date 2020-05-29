@@ -241,8 +241,8 @@ class LocalMusicPlayer(commands.Cog):
         if await self.checkQueueIsEmpty(ctx):
             return
         if ctx.voice_client.is_paused() or ctx.voice_client.is_playing():
-            ctx.voice_client.pause()
             await ctx.send('**Queue '+ ('Already' if ctx.voice_client.is_paused() else None) +' Paused.**')
+            ctx.voice_client.pause()
         else:
             await ctx.send('**Queue is not Playing.**')
 
